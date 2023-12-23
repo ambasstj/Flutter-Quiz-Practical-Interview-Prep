@@ -12,7 +12,6 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreen extends State<QuestionsScreen> {
-
   final currentQuestion = questions[0];
 
   @override
@@ -24,13 +23,16 @@ class _QuestionsScreen extends State<QuestionsScreen> {
               end: Alignment.bottomRight,
               colors: [Colors.purple, Colors.black])),
       child: Center(
-        child: Column(mainAxisSize: MainAxisSize.min,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-             Text(currentQuestion.text,textAlign: TextAlign.center ,style: const TextStyle(fontSize: 30, color: Colors.white )),
-            const SizedBox(height: 30),
-           ...currentQuestion.answers.map((answers) =>
-            AnswerButton(answers, () {})
-            ),
+            Text(currentQuestion.text,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 30, color: Colors.white)),
+            const SizedBox(height: 50),
+            ...currentQuestion.getShuffledAnswers().map(
+              (answer) => AnswerButton(answer, () {}),
+            )
           ],
         ),
       ),

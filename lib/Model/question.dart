@@ -6,5 +6,11 @@ class Question{
 
   Question(this.text, this.answers);
 
+  List<String> getShuffledAnswers(){
+    List<String> shuffledAnswers = List.of(answers);
+    shuffledAnswers.shuffle();
+    return shuffledAnswers;
+  }
+
 
 }

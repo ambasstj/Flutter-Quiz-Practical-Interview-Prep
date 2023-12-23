@@ -8,23 +8,26 @@ class AnswerButton extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return Column(
-      children: [
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 29,vertical: 15),
-            elevation: 20,
-            backgroundColor: const Color(0x673AB7FF),
-            shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))
+    return
+        Container( margin: const EdgeInsets.only(left: 30, right:30, bottom: 10),
+          child: Column( crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 29,vertical: 15),
+                  elevation: 20,
+                  backgroundColor: const Color(0x673AB7FF),
+                  shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))
+                ),
+                onPressed: onTap,
+                child: Text(
+                  answer,
+                  style: const TextStyle(fontSize: 30, color: Colors.white),
+                ),
+              ),
+              const SizedBox(height: 20)
+            ],
           ),
-          onPressed: onTap,
-          child: Text(
-            answer,
-            style: const TextStyle(fontSize: 30, color: Colors.white),
-          ),
-        ),
-        const SizedBox(height: 15)
-      ],
-    );
+        );
   }
 }
