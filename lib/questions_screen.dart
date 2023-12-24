@@ -20,7 +20,6 @@ class _QuestionsScreen extends State<QuestionsScreen> {
       currentIndex += 1;
     });
   }
-
   @override
   Widget build(context) {
     final currentQuestion = questions[currentIndex];
